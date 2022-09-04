@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "old_band_shows",
+  "info": {
+    "name": "oldBandShows",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "showImage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "text"
+    },
+    "posts": {
+      "collection": "posts"
+    }
+  }
+}

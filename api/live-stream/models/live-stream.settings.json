@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "live_streams",
+  "info": {
+    "name": "live stream",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "streamLink": {
+      "type": "string"
+    }
+  }
+}

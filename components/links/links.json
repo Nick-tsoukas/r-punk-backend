@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_links_links",
+  "info": {
+    "name": "links",
+    "icon": "angle-up"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    }
+  }
+}

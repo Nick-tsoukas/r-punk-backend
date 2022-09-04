@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_bands_playing_bands_playings",
+  "info": {
+    "name": "bandsPlaying",
+    "icon": "angry"
+  },
+  "options": {},
+  "attributes": {
+    "BandName": {
+      "type": "string"
+    }
+  }
+}

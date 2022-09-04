@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shows",
+  "info": {
+    "name": "shows",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "comments": {
+      "collection": "comments"
+    },
+    "posts": {
+      "collection": "posts"
+    }
+  }
+}

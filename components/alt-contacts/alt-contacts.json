@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_alt_contacts_alt_contacts",
+  "info": {
+    "name": "altContacts",
+    "icon": "american-sign-language-interpreting"
+  },
+  "options": {},
+  "attributes": {
+    "contact": {
+      "type": "string"
+    }
+  }
+}

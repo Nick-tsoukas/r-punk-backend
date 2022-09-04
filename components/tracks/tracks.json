@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_tracks_tracks",
+  "info": {
+    "name": "tracks",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "track": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

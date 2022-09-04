@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_photos_photos",
+  "info": {
+    "name": "photos",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "pic": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

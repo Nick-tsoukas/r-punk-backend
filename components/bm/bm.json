@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_bm_bms",
+  "info": {
+    "name": "bm",
+    "icon": "angle-left"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

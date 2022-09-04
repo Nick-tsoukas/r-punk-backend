@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_single_singles",
+  "info": {
+    "name": "singles",
+    "icon": "ankh",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "songFile": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "songTitle": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "labelName": {
+      "type": "string"
+    },
+    "singlePhoto": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "link": {
+      "type": "text"
+    },
+    "history": {
+      "type": "string"
+    }
+  }
+}

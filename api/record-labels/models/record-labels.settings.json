@@ -1,0 +1,141 @@
+{
+  "kind": "collectionType",
+  "collectionName": "record_labels",
+  "info": {
+    "name": "recordLabels",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "streetAddress": {
+      "type": "string"
+    },
+    "county": {
+      "type": "string"
+    },
+    "distroImages": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "merches": {
+      "collection": "merch"
+    },
+    "users_permissions_user": {
+      "via": "record_label",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "posts": {
+      "collection": "posts"
+    },
+    "streeNumber": {
+      "type": "integer"
+    },
+    "streetName": {
+      "type": "string"
+    },
+    "distroImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "events": {
+      "collection": "events"
+    },
+    "zip": {
+      "type": "integer"
+    },
+    "dateOpened": {
+      "type": "date"
+    },
+    "genre": {
+      "type": "enumeration",
+      "enum": [
+        "punk",
+        "ska",
+        "hardcore"
+      ]
+    },
+    "releases": {
+      "collection": "releases"
+    },
+    "photos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "photos.photos"
+    },
+    "users_permissions_user_": {
+      "via": "record_labels",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

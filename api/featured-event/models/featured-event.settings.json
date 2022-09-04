@@ -1,0 +1,74 @@
+{
+  "kind": "singleType",
+  "collectionName": "featured_events",
+  "info": {
+    "name": "featured event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "venueName": {
+      "type": "string"
+    },
+    "streetAddress": {
+      "type": "integer"
+    },
+    "streetName": {
+      "type": "string"
+    },
+    "ticketLink": {
+      "type": "string"
+    },
+    "venueLink": {
+      "type": "string"
+    },
+    "eventPoster": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "headlinerOne": {
+      "type": "string"
+    },
+    "headlinerTwo": {
+      "type": "string"
+    },
+    "headlinerThree": {
+      "type": "string"
+    },
+    "headlinerFour": {
+      "type": "string"
+    },
+    "eventDescription": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "isEvent": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

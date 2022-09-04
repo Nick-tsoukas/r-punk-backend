@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "feats",
+  "info": {
+    "name": "feat"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

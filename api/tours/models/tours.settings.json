@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tours",
+  "info": {
+    "name": "tours",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "production": {
+      "type": "string"
+    },
+    "headlinerOne": {
+      "type": "string"
+    },
+    "headlinerTwo": {
+      "type": "string"
+    },
+    "headlinerThree": {
+      "type": "string"
+    },
+    "headlinerFour": {
+      "type": "string"
+    },
+    "events": {
+      "collection": "events"
+    },
+    "users_permissions_user": {
+      "via": "tours",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "posts": {
+      "collection": "posts"
+    },
+    "dateStart": {
+      "type": "date"
+    },
+    "dateEnd": {
+      "type": "date"
+    },
+    "touringBands": {
+      "type": "component",
+      "repeatable": true,
+      "component": "touring-bands.touring-bands"
+    },
+    "touringPoster": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "tourLink": {
+      "type": "text"
+    },
+    "tourEvents": {
+      "type": "component",
+      "repeatable": true,
+      "component": "events.events"
+    }
+  }
+}

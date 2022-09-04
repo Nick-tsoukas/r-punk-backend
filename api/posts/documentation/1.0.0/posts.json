@@ -1,0 +1,1556 @@
+{
+  "paths": {
+    "/posts": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the posts's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve posts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Posts"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Posts"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new posts record",
+        "responses": {
+          "200": {
+            "description": "Retrieve posts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Posts"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Posts"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPosts"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/posts/count": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve the number of posts documents",
+        "responses": {
+          "200": {
+            "description": "Retrieve posts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Posts"
+        ],
+        "parameters": []
+      }
+    },
+    "/posts/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one posts record",
+        "responses": {
+          "200": {
+            "description": "Retrieve posts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Posts"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Posts"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single posts record",
+        "responses": {
+          "200": {
+            "description": "Retrieve posts document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Posts"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Posts"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPosts"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single posts record",
+        "responses": {
+          "200": {
+            "description": "deletes a single posts based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Posts"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Posts": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "users_permissions_user": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmationToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "merches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "venues": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "bands": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "classifieds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "user": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "venuesCollection": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tours": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "acc": {
+                "type": "integer"
+              },
+              "profileImg": {
+                "type": "string"
+              },
+              "record_label": {
+                "type": "string"
+              },
+              "record_labels": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "favs": {
+                "type": "component"
+              },
+              "favorites": {
+                "type": "object"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "classified": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "members",
+                  "jam",
+                  "friends",
+                  "pets",
+                  "donkeys",
+                  "shows",
+                  "instruments"
+                ]
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "image": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "bands": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "bandName": {
+                "type": "string"
+              },
+              "genre": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "bandEmail": {
+                "type": "string"
+              },
+              "bandManager": {
+                "type": "string"
+              },
+              "recordLabel": {
+                "type": "string"
+              },
+              "bandProfileImg": {
+                "type": "string"
+              },
+              "members": {
+                "type": "component"
+              },
+              "profileImgUrl": {
+                "type": "string"
+              },
+              "bio": {
+                "type": "string"
+              },
+              "biohtml": {
+                "type": "string"
+              },
+              "album": {
+                "type": "component"
+              },
+              "isThereEvent": {
+                "type": "boolean"
+              },
+              "videos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "logo": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              },
+              "linkOne": {
+                "type": "string"
+              },
+              "linkTwo": {
+                "type": "string"
+              },
+              "linkThree": {
+                "type": "string"
+              },
+              "linkFour": {
+                "type": "string"
+              },
+              "old_band_shows": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "singles": {
+                "type": "component"
+              },
+              "merch": {
+                "type": "component"
+              },
+              "genreAlt": {
+                "type": "string",
+                "enum": [
+                  "oldPunk",
+                  "hardCore",
+                  "streetSkate",
+                  "oi",
+                  "skaSurf",
+                  "Ccust",
+                  "melodicPop",
+                  "anarchoPeace",
+                  "other"
+                ]
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "oldShows": {
+                "type": "component"
+              },
+              "dateStarted": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "merches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "releases": {
+                "type": "component"
+              },
+              "altContacts": {
+                "type": "component"
+              },
+              "country": {
+                "type": "string"
+              },
+              "pictures": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "links": {
+                "type": "component"
+              },
+              "photos": {
+                "type": "component"
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "releasesAlt": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "announcements": {
+                "type": "component"
+              },
+              "acc": {
+                "type": "integer"
+              },
+              "video1": {
+                "type": "string"
+              },
+              "video2": {
+                "type": "string"
+              },
+              "video3": {
+                "type": "string"
+              },
+              "tracks": {
+                "type": "component"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "event": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "venueName": {
+                "type": "string"
+              },
+              "streetName": {
+                "type": "string"
+              },
+              "ticketLink": {
+                "type": "string"
+              },
+              "venueLink": {
+                "type": "string"
+              },
+              "eventPoster": {
+                "type": "string"
+              },
+              "headlinerOne": {
+                "type": "string"
+              },
+              "headlinerTwo": {
+                "type": "string"
+              },
+              "headlinerThree": {
+                "type": "string"
+              },
+              "headlinerFour": {
+                "type": "string"
+              },
+              "eventDescription": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "venues": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "timeStarts": {
+                "type": "string"
+              },
+              "bandsPlaying": {
+                "type": "component"
+              },
+              "bandName": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "streetAddress": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "old_band_show": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "showImage": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "description": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "record_label": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "logo": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "streetAddress": {
+                "type": "string"
+              },
+              "county": {
+                "type": "string"
+              },
+              "distroImages": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "phone": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "instagram": {
+                "type": "string"
+              },
+              "facebook": {
+                "type": "string"
+              },
+              "twitter": {
+                "type": "string"
+              },
+              "contact": {
+                "type": "string"
+              },
+              "bio": {
+                "type": "string"
+              },
+              "merches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "streeNumber": {
+                "type": "integer"
+              },
+              "streetName": {
+                "type": "string"
+              },
+              "distroImage": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "zip": {
+                "type": "integer"
+              },
+              "dateOpened": {
+                "type": "string"
+              },
+              "genre": {
+                "type": "string",
+                "enum": [
+                  "punk",
+                  "ska",
+                  "hardcore"
+                ]
+              },
+              "releases": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "photos": {
+                "type": "component"
+              },
+              "users_permissions_user_": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "show": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "tour": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "production": {
+                "type": "string"
+              },
+              "headlinerOne": {
+                "type": "string"
+              },
+              "headlinerTwo": {
+                "type": "string"
+              },
+              "headlinerThree": {
+                "type": "string"
+              },
+              "headlinerFour": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "dateStart": {
+                "type": "string"
+              },
+              "dateEnd": {
+                "type": "string"
+              },
+              "touringBands": {
+                "type": "component"
+              },
+              "touringPoster": {
+                "type": "string"
+              },
+              "tourLink": {
+                "type": "string"
+              },
+              "tourEvents": {
+                "type": "component"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "venue": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "streetAddress": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "venueImg": {
+                "type": "string"
+              },
+              "venueImages": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mon": {
+                "type": "string"
+              },
+              "tues": {
+                "type": "string"
+              },
+              "wed": {
+                "type": "string"
+              },
+              "thur": {
+                "type": "string"
+              },
+              "fri": {
+                "type": "string"
+              },
+              "sun": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "link": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "logo": {
+                "type": "string"
+              },
+              "streetNumber": {
+                "type": "integer"
+              },
+              "streetName": {
+                "type": "string"
+              },
+              "zip": {
+                "type": "integer"
+              },
+              "dateOpened": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "genre": {
+                "type": "string",
+                "enum": [
+                  "punk",
+                  "rock",
+                  "ska",
+                  "hardcore"
+                ]
+              },
+              "contact": {
+                "type": "string"
+              },
+              "altContacts": {
+                "type": "component"
+              },
+              "links": {
+                "type": "component"
+              },
+              "photos": {
+                "type": "component"
+              },
+              "country": {
+                "type": "string"
+              },
+              "announcements": {
+                "type": "component"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "video": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "band": {
+                "type": "string"
+              },
+              "videoFile": {
+                "type": "string"
+              },
+              "placeholderVideo": {
+                "type": "string"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "image": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewPosts": {
+        "properties": {
+          "data": {
+            "type": "string"
+          },
+          "users_permissions_user": {
+            "type": "string"
+          },
+          "classified": {
+            "type": "string"
+          },
+          "bands": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string"
+          },
+          "old_band_show": {
+            "type": "string"
+          },
+          "record_label": {
+            "type": "string"
+          },
+          "show": {
+            "type": "string"
+          },
+          "tour": {
+            "type": "string"
+          },
+          "venue": {
+            "type": "string"
+          },
+          "video": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Posts"
+    }
+  ]
+}

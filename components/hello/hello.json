@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_hello_hellos",
+  "info": {
+    "name": "hello",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

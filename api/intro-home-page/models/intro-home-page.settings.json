@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "intro_home_pages",
+  "info": {
+    "name": "intro home page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "hasLiveStream": {
+      "type": "boolean"
+    },
+    "hasFeatVideo": {
+      "type": "boolean"
+    },
+    "liveId": {
+      "type": "string"
+    },
+    "videoId": {
+      "type": "string"
+    }
+  }
+}

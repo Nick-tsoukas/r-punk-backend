@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_song_songs",
+  "info": {
+    "name": "songs",
+    "icon": "arrows-alt"
+  },
+  "options": {},
+  "attributes": {
+    "songTitle": {
+      "type": "string"
+    },
+    "songFile": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

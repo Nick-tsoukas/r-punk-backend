@@ -1,0 +1,216 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bands",
+  "info": {
+    "name": "Bands",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "populateCreatorFields": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bandName": {
+      "type": "string"
+    },
+    "genre": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "bandEmail": {
+      "type": "email"
+    },
+    "bandManager": {
+      "type": "string"
+    },
+    "recordLabel": {
+      "type": "string"
+    },
+    "bandProfileImg": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "members": {
+      "type": "component",
+      "repeatable": true,
+      "component": "member.members"
+    },
+    "profileImgUrl": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "biohtml": {
+      "type": "richtext"
+    },
+    "album": {
+      "type": "component",
+      "repeatable": true,
+      "component": "albums.album"
+    },
+    "isThereEvent": {
+      "type": "boolean",
+      "default": true
+    },
+    "videos": {
+      "via": "band",
+      "collection": "videos"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "contact": {
+      "type": "string"
+    },
+    "linkOne": {
+      "type": "string"
+    },
+    "linkTwo": {
+      "type": "string"
+    },
+    "linkThree": {
+      "type": "string"
+    },
+    "linkFour": {
+      "type": "string"
+    },
+    "old_band_shows": {
+      "collection": "old-band-shows"
+    },
+    "singles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "single.singles"
+    },
+    "merch": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.merch"
+    },
+    "genreAlt": {
+      "type": "enumeration",
+      "enum": [
+        "oldPunk",
+        "hardCore",
+        "streetSkate",
+        "oi",
+        "skaSurf",
+        "Ccust",
+        "melodicPop",
+        "anarchoPeace",
+        "other"
+      ]
+    },
+    "users_permissions_user": {
+      "via": "bands",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "posts": {
+      "collection": "posts"
+    },
+    "oldShows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "old-shows.old-shows"
+    },
+    "dateStarted": {
+      "type": "date"
+    },
+    "events": {
+      "collection": "events"
+    },
+    "merches": {
+      "collection": "merch"
+    },
+    "releases": {
+      "type": "component",
+      "repeatable": true,
+      "component": "releases.releases"
+    },
+    "altContacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "alt-contacts.alt-contacts"
+    },
+    "country": {
+      "type": "string"
+    },
+    "pictures": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.links"
+    },
+    "photos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "photos.photos"
+    },
+    "comments": {
+      "collection": "comments"
+    },
+    "releasesAlt": {
+      "collection": "releases"
+    },
+    "announcements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "announcements.announcements"
+    },
+    "acc": {
+      "type": "integer"
+    },
+    "video1": {
+      "type": "string"
+    },
+    "video2": {
+      "type": "string"
+    },
+    "video3": {
+      "type": "string"
+    },
+    "tracks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tracks.tracks"
+    }
+  }
+}

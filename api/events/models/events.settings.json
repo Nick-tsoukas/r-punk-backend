@@ -1,0 +1,96 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "events",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "venueName": {
+      "type": "string"
+    },
+    "streetName": {
+      "type": "string"
+    },
+    "ticketLink": {
+      "type": "string"
+    },
+    "venueLink": {
+      "type": "string"
+    },
+    "eventPoster": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "headlinerOne": {
+      "type": "string"
+    },
+    "headlinerTwo": {
+      "type": "string"
+    },
+    "headlinerThree": {
+      "type": "string"
+    },
+    "headlinerFour": {
+      "type": "string"
+    },
+    "eventDescription": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "venues": {
+      "via": "events",
+      "collection": "venue"
+    },
+    "users_permissions_user": {
+      "via": "user",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "posts": {
+      "collection": "posts"
+    },
+    "timeStarts": {
+      "type": "time"
+    },
+    "bandsPlaying": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bands-playing.bands-playing"
+    },
+    "bandName": {
+      "model": "bands"
+    },
+    "country": {
+      "type": "string"
+    },
+    "streetAddress": {
+      "type": "string"
+    }
+  }
+}

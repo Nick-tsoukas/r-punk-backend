@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classifieds",
+  "info": {
+    "name": "classified",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "contact": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "members",
+        "jam",
+        "friends",
+        "pets",
+        "donkeys",
+        "shows",
+        "instruments"
+      ]
+    },
+    "comments": {
+      "collection": "comments"
+    },
+    "users_permissions_user": {
+      "via": "classifieds",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "posts": {
+      "collection": "posts"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "country": {
+      "type": "string"
+    }
+  }
+}

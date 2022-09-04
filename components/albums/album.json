@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_albums_albums",
+  "info": {
+    "name": "album",
+    "icon": "adjust",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "albumCover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "songs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "song.songs"
+    },
+    "dateReleased": {
+      "type": "date"
+    },
+    "link": {
+      "type": "text"
+    }
+  }
+}

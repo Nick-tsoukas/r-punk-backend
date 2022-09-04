@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/old-band-shows",
+      "handler": "old-band-shows.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/old-band-shows/count",
+      "handler": "old-band-shows.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/old-band-shows/:id",
+      "handler": "old-band-shows.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/old-band-shows",
+      "handler": "old-band-shows.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/old-band-shows/:id",
+      "handler": "old-band-shows.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/old-band-shows/:id",
+      "handler": "old-band-shows.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

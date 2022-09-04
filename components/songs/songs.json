@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_songs_songs",
+  "info": {
+    "name": "songs",
+    "icon": "award",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "songUrl": {
+      "type": "string"
+    },
+    "albumId": {
+      "type": "string"
+    },
+    "songTitle": {
+      "type": "string"
+    }
+  }
+}

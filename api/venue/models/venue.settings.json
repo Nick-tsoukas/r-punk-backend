@@ -1,0 +1,148 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venues",
+  "info": {
+    "name": "venues",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "streetAddress": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "venueImg": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "venueImages": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "mon": {
+      "type": "string"
+    },
+    "tues": {
+      "type": "string"
+    },
+    "wed": {
+      "type": "string"
+    },
+    "thur": {
+      "type": "string"
+    },
+    "fri": {
+      "type": "string"
+    },
+    "sun": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "events": {
+      "via": "venues",
+      "collection": "events",
+      "dominant": true
+    },
+    "link": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "via": "venuesCollection",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "streetNumber": {
+      "type": "integer"
+    },
+    "streetName": {
+      "type": "string"
+    },
+    "zip": {
+      "type": "integer"
+    },
+    "dateOpened": {
+      "type": "date"
+    },
+    "posts": {
+      "collection": "posts"
+    },
+    "genre": {
+      "type": "enumeration",
+      "enum": [
+        "punk",
+        "rock",
+        "ska",
+        "hardcore"
+      ]
+    },
+    "contact": {
+      "type": "string"
+    },
+    "altContacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "alt-contacts.alt-contacts"
+    },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.links"
+    },
+    "photos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "photos.photos"
+    },
+    "country": {
+      "type": "string"
+    },
+    "announcements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "announcements.announcements"
+    }
+  }
+}

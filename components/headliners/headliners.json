@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_headliners_headliners",
+  "info": {
+    "name": "headliners",
+    "icon": "asterisk"
+  },
+  "options": {},
+  "attributes": {
+    "bandName": {
+      "type": "string"
+    }
+  }
+}

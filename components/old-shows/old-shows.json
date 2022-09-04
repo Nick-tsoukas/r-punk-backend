@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_old_shows_old_shows",
+  "info": {
+    "name": "oldShows",
+    "icon": "atom"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "posts": {
+      "collection": "posts"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "venueName": {
+      "type": "string"
+    }
+  }
+}

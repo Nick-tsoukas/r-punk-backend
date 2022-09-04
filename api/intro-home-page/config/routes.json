@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/intro-home-page",
+      "handler": "intro-home-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/intro-home-page",
+      "handler": "intro-home-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/intro-home-page",
+      "handler": "intro-home-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

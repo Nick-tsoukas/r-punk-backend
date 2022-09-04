@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_member_members",
+  "info": {
+    "name": "members",
+    "icon": "air-freshener",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "instrument": {
+      "type": "string"
+    },
+    "dateStart": {
+      "type": "date"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

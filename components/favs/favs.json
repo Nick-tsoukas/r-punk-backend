@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_favs_favs",
+  "info": {
+    "name": "favs",
+    "icon": "ambulance",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "favObject": {
+      "type": "json"
+    }
+  }
+}

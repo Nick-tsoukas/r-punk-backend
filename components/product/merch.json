@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_product_merches",
+  "info": {
+    "name": "merch",
+    "icon": "apple-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "productName": {
+      "type": "string"
+    },
+    "productImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "productLink": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

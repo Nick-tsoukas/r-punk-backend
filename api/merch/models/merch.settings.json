@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merches",
+  "info": {
+    "name": "merch",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "productPrice": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    },
+    "productImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "users": {
+      "via": "merches",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_touring_bands_touring_bands",
+  "info": {
+    "name": "touringBands",
+    "icon": "at"
+  },
+  "options": {},
+  "attributes": {
+    "bandName": {
+      "type": "string"
+    }
+  }
+}
